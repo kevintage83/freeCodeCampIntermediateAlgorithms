@@ -1,13 +1,31 @@
-//Create the function, "whatIsInAName," that takes two arguments, "collection" and "source," as parameters.
+//Create a function, "whatIsInAName," that takes two arguments, "collection" and "source," as parameters.
 function whatIsInAName(collection, source) {
-  //Create a new function, "array," that will accept the results from the two parameters passed into "whatIsInAName."
-  var arr = [];
-  // Only change code below this line
+  // Create a variable, "
+  var srcKeys = Object.keys(source);
+
+  /*Looking at the instructions for the challenge, we know that we just want to return part of the "collection" array 
+  that has the matching object(rather than the entire thing), so that indicates that we want to FILTER the "collection."
   
+  We also know that we want to check to see if the "collection" array element has a specified property, so we can 
   
-  //Display the result in the console.
-  return arr;
+  Every object descended from Object inherits the hasOwnProperty method. 
+  This method can be used to determine whether an object has the specified property as a direct property of that object; 
+  unlike the "in" operator, this method does not check down the object's prototype chain.
+  
+  Object.keys() returns an array whose elements are strings corresponding to the enumerable properties found directly upon object.
+  The ordering of the properties is the same as that given by looping over the properties of the object manually.
+  */
+  return collection.filter(function (object) {
+    for(var index = 0; index < srcKeys.length; index++) {
+      if(!object.hasOwnProperty(srcKeys[index]) || object[srcKeys[index]] !== source[srcKeys[index]]) {
+        return false;
+      }
+    }
+    return true;
+  });
 }
+
+
 //Invoke the function "whatIsInAName."
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
 
