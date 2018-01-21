@@ -6,7 +6,8 @@ function whatIsInAName(collection, source) {
   /*Looking at the instructions for the challenge, we know that we just want to return part of the "collection" array 
   that has the matching object(rather than the entire thing), so that indicates that we want to FILTER the "collection."
   
-  We also know that we want to check to see if the "collection" array element has a specified property, so we can 
+  We also know that we want to check to see if the "collection" array element has a specified property, so we can use the 
+  method "hasOwnProperty."
   
   Every object descended from Object inherits the hasOwnProperty method. 
   This method can be used to determine whether an object has the specified property as a direct property of that object; 
