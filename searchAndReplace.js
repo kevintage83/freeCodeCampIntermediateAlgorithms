@@ -1,23 +1,20 @@
-//Create a function, "myReplace," that takes three arguments, "str," "before," and "after" as parameters. 
-function myReplace(str, before, after) {
-  /*Create a new variable, "beforeCap," that takes the value of the index (position within the) item in the argument "str"
-  We will use the index value as the point at which we make our second evaluation; checking to see if the first character 
-  of the matching item begins with an upper-case letter */
-  var beforeCap = str.indexOf(before);
-  var p = after.charAt(0).toUpperCase(after) + after.slice(1);
-  /*If the matching item begins with an uppser-case letter, convert the first character in "after" to upper-case and 
-  append/concatenate the remaining characters in "after" to the upper-cased letter; store this new string as the value of the parameter "after" */
-  if (str[beforeCap] === str[beforeCap].toUpperCase()){
-    var newAfter = after.charAt(0).toUpperCase + after.slice(1);
-    return str.replace(before, newAfter);
+//Create a function, "myReplace," that takes three arguments "str," "before," and "after," as parameters. 
+function myReplace(string, before, after) {
+  // Create a variable, 'index,' and search through 'string' to see if 'before' matches any of the parts of 'string' are a match
+  var index = string.indexOf(before);
+  // Determine whether the first letter is uppercase by checking each array item in 'string.'
+  if (string[index] === string[index].toUpperCase()) {
+    // Change 'after' to be capitalized if the 'if' condition is met.
+    after = after.charAt(0).toUpperCase() + after.slice(1);
   }
-  //Create a new variable, "newStr," that replaces the value stored in the "before" parameter with the "after" parameter.
-  var newStr = str.replace(before, after);
-  //Return the result
-return newStr;
+  // Replace the array item in string that matched the 'before' value, with 'after.' 
+  string = string.replace(before, after);
+//Return the new value for 'string.'
+  return string;
 }
-//call the function "myReplace" and pass three arguments into the function as parameters. 
-myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
+
+//Call the function,'myReplace,' and pass three arguments as parameters.
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 
 /*
 Perform a search and replace on the sentence using the arguments provided and return the new sentence.
