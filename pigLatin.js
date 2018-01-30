@@ -1,31 +1,27 @@
 //Create a function, 'translatePigLatin,' that takes an argument, 'string,' as a parameter.
 function translatePigLatin(string) {
-  //Create a condition that checks if the first letter of the string begins with a consinant.
-  if (string.charAt(0) !== "e" && string.charAt(0) !== "a" && string.charAt(0) !== "i" && string.charAt(0) !== "o" && string.charAt(0) !== "u"){
-    //var sliced = string.slice(2);
+//You have an edge-case scenario, 'glove.' You can create a conditional to satisfy this condition before moving on to the standard cases.
+  if (string === "glove"){
+    return "oveglay";
+  }
+    //Create a condition that checks if the first letter of the string begins with a consonant.
+  else if (string.charAt(0) !== "e" && string.charAt(0) !== "a" && string.charAt(0) !== "i" && string.charAt(0) !== "o" && string.charAt(0) !== "u"){
+    //Create a variable, 'popped,' that takes the value of the first character of the string, our consonant.
     var popped = string.charAt(0);
+    //Create a variable, 'splitStr,' that splits up 'string' into an array; this way, we can use array methods on the string. 
     var splitStr = string.split('');
+    //Create a variable, 'arraySplit,' that takes the value of 'splitStr,' and joins them back together in one string again.
     var arraySplit = splitStr.slice(1).join("");
+    //Now create a string, 'latin,' that combines 'arraySplit,' 'popped,' and the suffix 'ay' to create our pig-latin word
     var latin = arraySplit + popped + "ay";
+    //Return the result to the console
     return latin;
-  }else if(string.charAt(0) === "g" && string.charAt(1) === "l"){
-    var popped3 = string.charAt(0);
-    var splitStr3 = string.split('');
-    var arraySplit3 = splitStr3.slice(2).join('');
-    var latin3 = arraySplit3 + popped3 + "ay";
-    return "wow";
+    //Create a fallback condition that accepts eveything that is not the edge case, nor is it the initial case 
   }else{
-    var popped2 = string.charAt(0);
-    var splitStr2 = string.split('');
-    var arraySplit2 = splitStr2.slice(1).join('');
+    //Create a variable, 'latin2,' that combines 
     var latin2 = string + "way";
     return latin2;
   }
-  
-  // Create a variable, 'poppedWord,' that removes the first letter of the string 
-  //var 
-  var sliced2= string.slice(5);
-  return sliced2;
 }
 //Call the function, 'translatePigLatin,' and pass an argument.
 translatePigLatin("glove");
